@@ -1,20 +1,29 @@
 package org.solent.com504.factoryandfacade.model;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class AnimalObjectFactory {
+    
+    private static final ApplicationContext CONTEXT = new ClassPathXmlApplicationContext("applicationContext.xml");
 
     public static Animal createCat() {
-        return new Cat();
+        Cat cat = (Cat) CONTEXT.getBean("cat");
+        return cat;
     }
 
     public static Animal createDog() {
-        return new Dog();
+        Dog dog = (Dog) CONTEXT.getBean("dog");
+        return dog;
     }
 
     public static Animal createCow() {
-        return new Cow();
+        Cow cow = (Cow) CONTEXT.getBean("cow");
+        return cow;
     }
 
     public static FarmFacade createFarmFacade() {
-        return new FarmFacadeImpl();
+        FarmFacade farmFacade = (FarmFacadeImpl) CONTEXT.getBean("farmFacade");
+        return farmFacade;
     }
 }

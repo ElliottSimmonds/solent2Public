@@ -19,7 +19,7 @@
     <!-- This scope is the default value if no other scope is specified.  --> 
     
     <!-- Only ONE farmFacade will ever exist because it is a singleton -->             
-    <bean id="farmFacade" class="org.solent.com504.factoryandfacade.springimpl.FarmFacadeSpringImpl" />
+    <bean id="farmFacade" class="org.solent.com504.factoryandfacade.model.FarmFacadeImpl" />
   
 
 </beans>
