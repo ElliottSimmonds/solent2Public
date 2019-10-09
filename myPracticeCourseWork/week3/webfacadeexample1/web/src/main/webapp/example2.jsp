@@ -28,8 +28,12 @@
 
     List<String> supportedAnimalTypes = (List<String>) session.getAttribute("supportedAnimalTypes");
     
-    if(request.getParameter("animalType") != null && request.getParameter("animalName") != ""){
-        farmFacade.addAnimal(request.getParameter("animalType"), request.getParameter("animalName"));
+    if (request.getParameter("button1") != null && request.getParameter("animalName") != "") {
+       farmFacade.addAnimal(request.getParameter("button1"), request.getParameter("animalName"));
+    } else if (request.getParameter("button2") != null && request.getParameter("animalName") != "") {
+        farmFacade.addAnimal(request.getParameter("button2"), request.getParameter("animalName"));
+    } else if (request.getParameter("button3") != null && request.getParameter("animalName") != "") {
+        farmFacade.addAnimal(request.getParameter("button3"), request.getParameter("animalName"));
     }
 
 %>
@@ -53,24 +57,20 @@
             %>
         </table> 
         
-        <div style="background-color:lightgrey;width:200px;">
+        <div style="background-color:lightgrey;width:220px;">
             <p>Add Animal to Farm</p>
             <form action="#" method="post">
-                <select name="animalType">
-                    <option value="" disabled selected>Animal Type</option>
-                    <option value="Cat">Cat</option>
-                    <option value="Cow">Cow</option>
-                    <option value="Dog">Dog</option>
-                </select>
-                <br>
                 Animal Name:<br>
-                <input type="text" name="animalName" value="">
+                <input type="text" name="animalName" value=""><br>
                 <br>
-                <input type="submit" value="Add Animal" />
+                <button type="submit" name="button1" value="Cat">Add Cat</button>
+                <button type="submit" name="button2" value="Cow">Add Cow</button>
+                <button type="submit" name="button3" value="Dog">Add Dog</button>
             </form>
         </div>
+        <br>
 
-        <p>Animals on Farm</p>
+        <caption>Animals on Farm</caption>
         <table>
             <tr>
                 <th>Type</th>
