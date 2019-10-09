@@ -27,6 +27,10 @@
     }
 
     List<String> supportedAnimalTypes = (List<String>) session.getAttribute("supportedAnimalTypes");
+    
+    if(request.getParameter("animalType") != null && request.getParameter("animalName") != ""){
+        farmFacade.addAnimal(request.getParameter("animalType"), request.getParameter("animalName"));
+    }
 
 %>
 
@@ -37,7 +41,8 @@
     </head>
     <body>
         <p>Page for Farm</p>
-        <p>Supported Animal Types</p>
+        
+        <caption>Supported Animal Types:</caption>
         <table>
             <% for (String animalType : supportedAnimalTypes) {%>
             <tr>
@@ -47,6 +52,23 @@
                 }
             %>
         </table> 
+        
+        <div style="background-color:lightgrey;width:200px;">
+            <p>Add Animal to Farm</p>
+            <form action="#" method="post">
+                <select name="animalType">
+                    <option value="" disabled selected>Animal Type</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Cow">Cow</option>
+                    <option value="Dog">Dog</option>
+                </select>
+                <br>
+                Animal Name:<br>
+                <input type="text" name="animalName" value="">
+                <br>
+                <input type="submit" value="Add Animal" />
+            </form>
+        </div>
 
         <p>Animals on Farm</p>
         <table>
