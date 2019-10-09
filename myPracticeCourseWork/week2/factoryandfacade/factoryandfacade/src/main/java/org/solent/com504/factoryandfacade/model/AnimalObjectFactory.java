@@ -21,6 +21,11 @@ public class AnimalObjectFactory {
         Cow cow = (Cow) CONTEXT.getBean("cow");
         return cow;
     }
+    
+    public static Animal createDuck() {
+        Duck duck = (Duck) CONTEXT.getBean("duck");
+        return duck;
+    }
 
     public static FarmFacade createFarmFacade() {
         FarmFacade farmFacade = (FarmFacadeImpl) CONTEXT.getBean("farmFacade");

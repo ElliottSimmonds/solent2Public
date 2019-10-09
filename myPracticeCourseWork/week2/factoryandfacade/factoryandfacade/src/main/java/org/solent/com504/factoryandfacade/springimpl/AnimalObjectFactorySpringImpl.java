@@ -4,6 +4,7 @@ import org.solent.com504.factoryandfacade.model.Animal;
 import org.solent.com504.factoryandfacade.model.Cat;
 import org.solent.com504.factoryandfacade.model.Cow;
 import org.solent.com504.factoryandfacade.model.Dog;
+import org.solent.com504.factoryandfacade.model.Duck;
 import org.solent.com504.factoryandfacade.model.FarmFacade;
 
 import org.springframework.context.ApplicationContext;
@@ -32,6 +33,12 @@ public class AnimalObjectFactorySpringImpl {
         // nb Cow is a prototype bean - a new one is created on every call to the context
         Cow cow = (Cow) context.getBean("cow");
         return cow;
+    }
+    
+    public static Animal createDuck() {
+        // nb Cow is a prototype bean - a new one is created on every call to the context
+        Duck duck = (Duck) context.getBean("duck");
+        return duck;
     }
 
     public static FarmFacade getFarmFacade() {

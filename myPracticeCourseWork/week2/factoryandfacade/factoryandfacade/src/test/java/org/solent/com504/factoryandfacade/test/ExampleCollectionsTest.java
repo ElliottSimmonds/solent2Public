@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
 import org.solent.com504.factoryandfacade.model.Animal;
 import org.solent.com504.factoryandfacade.model.Cat;
 import org.solent.com504.factoryandfacade.model.Dog;
+import org.solent.com504.factoryandfacade.model.Cow;
+import org.solent.com504.factoryandfacade.model.Duck;
 
 /**
  *
@@ -45,7 +47,7 @@ public class ExampleCollectionsTest {
         // You can add any object to an un typed list
         unTypedList.add(new Cat());
         unTypedList.add("any old string");
-        unTypedList.add(new Integer(101));
+        unTypedList.add(101);
 
         System.out.println("\nprinting out list of objects using toString()");
         for (Object object : unTypedList) {
@@ -68,6 +70,12 @@ public class ExampleCollectionsTest {
         Dog d1 = new Dog();
         d1.setName("Fido");
         listOfAnimals.add(d1);
+        Cow c2 = new Cow();
+        c2.setName("Daisy");
+        listOfAnimals.add(c2);
+        Duck d2 = new Duck();
+        d2.setName("Quakers");
+        listOfAnimals.add(d2);
 
         // but you cannot add any other object type
         // if you uncomment this line the compiler will throw an error

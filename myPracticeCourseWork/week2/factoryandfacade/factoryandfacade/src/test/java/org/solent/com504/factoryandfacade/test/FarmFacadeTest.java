@@ -26,19 +26,11 @@ public class FarmFacadeTest {
     }
     
     @Test
-    public void addDog() {
-        System.out.println("Adding dog to farm");
-        farmFacade.addDog("Bert");
-        System.out.println("List Size: " + farmFacade.getAllAnimals().size());
-        assertEquals(1,farmFacade.getAllAnimals().size());
-    }
-
-    @Test
     public void addCat() {
         System.out.println("Adding cat to farm");
         farmFacade.addCat("Earnie");
         System.out.println("List Size: " + farmFacade.getAllAnimals().size());
-        assertEquals(2,farmFacade.getAllAnimals().size());
+        assertEquals(1,farmFacade.getAllAnimals().size());
     }
 
     @Test
@@ -46,7 +38,23 @@ public class FarmFacadeTest {
         System.out.println("Adding cow to farm");
         farmFacade.addCow("Frankie");
         System.out.println("List Size: " + farmFacade.getAllAnimals().size());
+        assertEquals(2,farmFacade.getAllAnimals().size());
+    }
+    
+    @Test
+    public void addDog() {
+        System.out.println("Adding dog to farm");
+        farmFacade.addDog("Bert");
+        System.out.println("List Size: " + farmFacade.getAllAnimals().size());
         assertEquals(3,farmFacade.getAllAnimals().size());
+    }
+    
+    @Test
+    public void addDuck() {
+        System.out.println("Adding duck to farm");
+        farmFacade.addDuck("Dookie");
+        System.out.println("List Size: " + farmFacade.getAllAnimals().size());
+        assertEquals(4,farmFacade.getAllAnimals().size());
     }
     
     @Test
@@ -55,12 +63,13 @@ public class FarmFacadeTest {
         farmFacade.addDog("Charles");
         farmFacade.addCat("Sally");
         farmFacade.addCow("McBeef");
+        farmFacade.addDuck("Faegie");
         
         List<Animal> animalList = farmFacade.getAllAnimals();
         animalList.forEach(a -> System.out.println(a.getName() + " says " + a.getSound()));
         System.out.println("List Size: " + animalList.size());
         
-        assertEquals(6,animalList.size());
+        assertEquals(8,animalList.size());
     }
     
     

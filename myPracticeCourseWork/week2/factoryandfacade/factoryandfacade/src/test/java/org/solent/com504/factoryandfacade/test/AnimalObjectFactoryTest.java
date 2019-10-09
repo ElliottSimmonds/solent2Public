@@ -51,4 +51,16 @@ public class AnimalObjectFactoryTest {
         assertEquals("Moo", sound);
 
     }
+    
+    @Test
+    public void testCreateDuck() {
+        Animal animal = AnimalObjectFactory.createDuck();
+
+        String sound = animal.getSound();
+
+        System.out.println(sound);
+
+        assertEquals("QUACK!", sound);
+
+    }
 }
