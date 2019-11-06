@@ -79,7 +79,8 @@
 			errorMessage = "problem creating  Book " + e.getMessage();
 		}
 	} else if ("clearSearch".equals(action)) {
-            // nothing required???
+            System.out.println("Search Cleared");
+            // nothing else required???
 	}
         
         if ("searchBooks".equals(action)) {
